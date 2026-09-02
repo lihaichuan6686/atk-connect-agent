@@ -1,0 +1,60 @@
+{
+  "name": "atk-agent-cli",
+  "version": "1.4.1",
+  "description": "AI Agent CLI for ATK (Aerospace Tool Kit) — 自然语言控制航天任务仿真",
+  "keywords": [
+    "atk",
+    "aerospace",
+    "ai-agent",
+    "llm",
+    "deepseek",
+    "cli",
+    "satellite",
+    "simulation"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "bin/",
+    "dist/",
+    "native/atk_sidecar.py",
+    "scripts/setup-python.mjs",
+    ".env.example",
+    "README.md",
+    "启动说明.md"
+  ],
+  "bin": {
+    "atk-agent": "./bin/atk-agent.mjs"
+  },
+  "scripts": {
+    "catalog:generate": "node scripts/generate-command-catalog.mjs",
+    "setup:python": "node scripts/setup-python.mjs",
+    "smoke:atk:catalog": "npm run build && node scripts/smoke-official-tools.mjs",
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "prepack": "npm run build",
+    "start": "node dist/index.js",
+    "lint": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "ink": "^7.1.1",
+    "react": "^19.2.8",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.2.18",
+    "ink-testing-library": "^4.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^4.1.10"
+  }
+}

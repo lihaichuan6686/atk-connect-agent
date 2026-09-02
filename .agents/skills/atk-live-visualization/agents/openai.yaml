@@ -1,0 +1,4 @@
+interface:
+  display_name: "ATK Live Visualization"
+  short_description: "Build, verify, and leave playable ATK scenes open"
+  default_prompt: "Use $atk-live-visualization to build and verify a playable ATK scene, start its animation, and leave the final window open."
